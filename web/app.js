@@ -127,6 +127,7 @@
 
   function updateCompareBar() {
     var count = selected.size;
+    $(".compare-bar").toggleClass("is-visible", count > 0);
     $("#compare-count").text(count + (count === 1 ? " laptop selected" : " laptops selected"));
     $("#compare-hint").text(count === 0 ? "Choose up to three to compare specifications" :
       (count < 2 ? "Select one more laptop to compare" : "You can compare up to three laptops"));
