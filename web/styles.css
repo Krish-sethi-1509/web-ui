@@ -109,7 +109,8 @@ details.spec-details summary { cursor: pointer; font-weight: 700; }
 .primary-button { min-height: 37px; padding: 0 13px; border-color: #235e55; background: #235e55; color: #fff; }
 .primary-button:hover:not(:disabled) { background: #194c45; }
 .primary-button:disabled { border-color: #c9d2ce; background: #c9d2ce; cursor: not-allowed; }
-.compare-bar { position: sticky; bottom: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 12px 0 0; padding: 11px 15px; border: 1px solid #d2dfd8; border-radius: 5px 5px 0 0; background: rgba(248,251,249,.97); box-shadow: 0 -4px 16px rgba(28,53,44,.06); }
+.compare-bar { display: none; position: sticky; bottom: 0; z-index: 5; display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 12px 0 0; padding: 11px 15px; border: 1px solid #d2dfd8; border-radius: 5px 5px 0 0; background: rgba(248,251,249,.97); box-shadow: 0 -4px 16px rgba(28,53,44,.06); }
+.compare-bar.is-visible { display: flex; }
 .compare-copy { display: flex; align-items: center; gap: 10px; }
 .compare-copy > div { display: flex; flex-direction: column; gap: 2px; }
 .compare-copy strong { color: #2b4b4a; font-size: 10px; }
