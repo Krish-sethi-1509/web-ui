@@ -1,40 +1,49 @@
 # SpecFinder India
 
-A student prototype for finding and comparing laptops by budget and hardware requirements.
+A student web application for searching and comparing laptop listings in India. The project combines a browser-based catalogue that demonstrates jQuery and Ajax with a Python and Streamlit prototype for specification search and analysis.
 
-## Features
+## Problem and objective
 
-- Start with a simple profile for gaming at college, study and everyday use, or a custom specification search.
-- Choose a budget, graphics level, processor tier, and minimum RAM using beginner-friendly descriptions.
-- Open **Know more** to filter by brand, exact GPU and processor family, storage, screen size, laptop category, and model name.
-- View laptop matches as image-ready cards, open **View details** for a closer look, or use the full comparison table and price chart.
-- Smartprix product photos load from image URLs when available; add local product photos under `assets/laptops/` using the filename guidance in `assets/laptops/README.md`.
+Laptop specifications can be difficult to compare across processor, graphics, memory, storage, screen size and price. SpecFinder India helps a student shortlist laptops by budget and requirements, then compare the specifications in one place.
 
-## Run on macOS
+## Main features
 
-From this project folder:
+- Search by laptop brand or model.
+- Filter by brand, laptop category, maximum budget and minimum RAM.
+- Sort matches by price or dataset rating.
+- Expand a listing to view more specifications.
+- Select up to three laptops and compare them side by side.
+- Use a beginner-friendly profile and deeper specification filters in the Streamlit prototype.
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
+## Syllabus concepts demonstrated
+
+The browser catalogue uses **jQuery**, **Ajax (XMLHttpRequest)**, JavaScript DOM updates, HTML and CSS. On page load, the Ajax request loads the cleaned CSV, Papa Parse reads its rows, and jQuery renders and filters the catalogue without a full page reload.
+
+The separate Streamlit prototype uses Python, Pandas and Plotly for data-driven search and analysis.
+
+## Run the browser catalogue
+
+From the repository root, start a local static web server:
+
+\`\`\`bash
+python -m http.server 8000
+\`\`\`
+
+Open http://localhost:8000/web/. The browser catalogue loads the cleaned CSV through Ajax. Internet access is needed for the jQuery and Papa Parse CDN scripts.
+
+## Run the Streamlit prototype
+
+\`\`\`bash
 python -m pip install -r requirements-project.txt
 streamlit run app.py
-```
+\`\`\`
 
-## Dataset
+## Dataset and limitations
 
-Both CSVs are included in this repository at `data/processed/laptops_cleaned.csv` and `data/raw/smartprix_laptop.csv`. The app loads and normalizes the Smartprix rows automatically. The Smartprix dataset adds image URLs alongside more specs, prices and Apple/RTX listings.
+The cleaned laptop dataset is included at data/processed/laptops_cleaned.csv. It is copied from the [Indian laptop specifications dataset](https://github.com/abhinavflac/laptops-specs-dataset); the source repository's MIT license is included in this project. The cleaning and exploratory analysis notebooks are included.
 
-The combined list has 1,939 rows (992 original plus 947 Smartprix). Preserve source attribution. The first source README describes its dataset as CC0, while that repository’s `LICENSE` says MIT; check with the author if you need to redistribute that dataset. The supplemental CSV is from Kaggle’s Smartprix laptop specs and prices dataset.
+The app can also load a supplemental Smartprix CSV from data/raw/smartprix_laptop.csv when that file is supplied. That supplemental file is not currently included. Listings are dataset snapshots, not live offers; retailer names, product-page URLs and current availability are not provided. Similar models from different data sources may appear more than once. Preserve the source attribution when using or redistributing the data.
 
-## Known limitations
+## Future scope
 
-- This is not a complete catalogue of every laptop. Similar model listings from the two sources are retained.
-- The CSVs do not include retailer names or product-page URLs. Prices are dataset snapshots, not live cross-store offers or current availability.
-- RTX 3050 is present in both sources. The gaming preset starts at the entry gaming GPU tier; use the study or custom profile for MacBooks.
-- Ratings use the original dataset’s 0–100 score scale.
-
-## Project area for evaluation
-
-Web Scraping / data analysis. The dataset sources report collecting laptop product listings from Indian e-commerce websites. This prototype focuses on normalizing structured fields and building a detailed specification search interface.
+Add current retailer links and availability, refresh data on a schedule, connect a database, add user saved lists, and extend the catalogue to PC components.
