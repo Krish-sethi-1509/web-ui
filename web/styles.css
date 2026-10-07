@@ -53,6 +53,7 @@ kbd { padding: 3px 5px; border: 1px solid #e2e7e4; border-radius: 3px; color: #9
 .filter-panel > summary span { margin-right: auto; }
 .text-button { padding: 4px 0; border: 0; background: transparent; color: #b25b3c; font-size: 10px; font-weight: 700; }
 .filter-content { padding: 0 13px 14px; border-top: 1px solid #edf0ee; }
+.filter-reset { display: flex; justify-content: space-between; align-items: center; padding-top: 10px; color: #8a9691; font-size: 9px; font-weight: 700; text-transform: uppercase; }
 .field-label { display: block; margin: 15px 0 6px; color: #596a6d; font-size: 10px; font-weight: 680; }
 .filter-content select, .sort-control select { width: 100%; min-height: 34px; padding: 7px 9px; border: 1px solid #d7dfda; border-radius: 4px; background: #fff; color: #34474b; font-size: 11px; }
 .filter-content select:focus, .sort-control select:focus { outline: 3px solid #d9ebe6; border-color: #528d81; }
