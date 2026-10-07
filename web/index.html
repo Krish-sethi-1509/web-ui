@@ -29,13 +29,10 @@
           <h2>Filters</h2>
           <button id="clear-filters" class="text-button" type="button">Clear</button>
         </div>
-
         <label class="field-label" for="search">Search</label>
         <input id="search" type="search" placeholder="Brand or model" autocomplete="off">
-
         <label class="field-label" for="brand">Brand</label>
         <select id="brand"><option value="">All brands</option></select>
-
         <label class="field-label" for="category">Laptop type</label>
         <select id="category">
           <option value="">All types</option>
@@ -44,13 +41,11 @@
           <option value="Thin & Light">Thin &amp; Light</option>
           <option value="General">General</option>
         </select>
-
         <div class="range-heading">
           <label class="field-label" for="budget">Maximum budget</label>
           <output id="budget-value" for="budget">Loading</output>
         </div>
         <input id="budget" type="range" min="0" max="300000" step="5000" value="300000">
-
         <div class="range-heading">
           <label class="field-label" for="ram">Minimum RAM</label>
           <output id="ram-value" for="ram">Any</output>
@@ -74,11 +69,9 @@
             </select>
           </label>
         </div>
-
         <div id="load-message" class="load-message" role="status">Loading laptop data…</div>
         <div id="empty-message" class="empty-message" hidden>No laptops match those filters. Try widening your search.</div>
         <div id="product-grid" class="product-grid"></div>
-
         <div class="list-footer">
           <button id="show-more" class="secondary-button" type="button" hidden>Show more</button>
         </div>
@@ -108,7 +101,7 @@
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" integrity="sha512-df5yP3g6N1xN0p7CwEwQ6QXqQ8W0dZ3sF8QyZ0n0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0z0==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="app.js"></script>
 </body>
 </html>
