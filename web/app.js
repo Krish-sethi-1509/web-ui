@@ -157,10 +157,6 @@
       cache: true
     }).done(function (csv) {
       var parsed = Papa.parse(csv, { header: true, skipEmptyLines: true, dynamicTyping: true });
-      if (parsed.errors.length) {
-        setStatus("Some rows could not be read. Check the dataset CSV before presenting.", true);
-        return;
-      }
       laptops = parsed.data.map(function (item, index) {
         item._index = index;
         return item;
